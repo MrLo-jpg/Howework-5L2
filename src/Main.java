@@ -12,13 +12,23 @@ public class Main {
         System.out.println();
 
         //Задание 2
-        int[] wastes = {700, 600, 800, 1000, 900,};
-        Arrays.sort(wastes);
-        System.out.println(Arrays.toString(wastes));
+        int[] wastes = {700, 400, 500, 1000, 900,};
+        int maxWastes = -1;
+        for (int i = 0; i < wastes.length; i++) {
+            if (wastes[i] > maxWastes) {
+                maxWastes = wastes[i];
+            }
+        }
+        int minWastes = 1001;
+        for (int i = 0; i < wastes.length - 1; i++) {
+            if (wastes[i] < minWastes) {
+                minWastes = wastes[i];
+            }
+        }
         System.out.println("Минимальная сумма трат" +
-                " за неделю составила " + wastes[0] + " рублей");
+                " за неделю составила " + minWastes + " рублей");
         System.out.println(" Максимальная сумма трат за неделю " +
-                "составила " + wastes[wastes.length - 1] + " рублей");
+                "составила " + maxWastes + " рублей");
 
 
         //Задача 3
